@@ -1,0 +1,8 @@
+.DS_Store
+.ruby-version
+*.iml
+.idea/
+log/*
+*.log
+examples/test.rb
+coverage

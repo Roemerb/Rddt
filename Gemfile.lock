@@ -1,0 +1,27 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
+    htmlentities (4.3.4)
+    multi_json (1.11.2)
+    multipart-post (2.0.0)
+    netrc (0.10.3)
+    paint (1.0.0)
+    redditkit (1.0.2)
+      faraday (~> 0.8)
+      htmlentities (~> 4.3)
+      multi_json (~> 1.8)
+    thor (0.19.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  netrc (~> 0.10.3)
+  paint (~> 1.0.0)
+  redditkit (~> 1.0.2)
+  thor (~> 0.19.1)
+
+BUNDLED WITH
+   1.10.6

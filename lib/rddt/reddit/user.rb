@@ -1,5 +1,4 @@
 require 'netrc'
-require 'pp'
 
 module Rddt
   class Reddit::User < Rddt::Reddit
@@ -67,8 +66,19 @@ module Rddt
       @client.user[:name]
     end
 
-    def get_karma(type)
+    def get_authenticated_client
+      if self.login_credentials_exist?
+        if self.sign_in(self.get_login_credentials)
+          @client
+        else
+          false
+        end
+      else
+        false
+      end
+    end
 
+    def get_karma(type)
       if type == "comment"
         @client.user[:comment_karma]
       elsif type == "link"

@@ -40,20 +40,15 @@ module Rddt
 
       redditUser = Rddt::Reddit::User.new
 
-      if redditUser.login_credentials_exist?
-        if redditUser.sign_in(redditUser.get_login_credentials)
-          karma = redditUser.get_karma(type)
-
-          if karma != nil
-            puts "Your #{type} karma is #{karma}"
-          else
-            puts "Invalid karma type"
-          end
+      if redditUser.get_authenticated_client
+        karma = redditUser.get_karma(type)
+        if karma != nil
+          puts "Your #{type} karma is #{karma}"
         else
-          puts "Login credentials invalid"
+          puts "Invalid karma type"
         end
       else
-        puts "Please sign in first"
+        puts "Authentication problem. Did you sign in?"
       end
     end
 	end
